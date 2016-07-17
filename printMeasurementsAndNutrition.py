@@ -23,20 +23,20 @@ def main():
 		print(str(date) + "\t" + bodyMeasurementsStringForDate(date, weights, bodyfats) + "\t" + nutritionStringForDate(date))
 
 def getStartDate():
-	if len(sys.argv) < 2:
-		argError()
-	return dateFromArg(1)
-
-def getEndDate():
 	if len(sys.argv) < 3:
-		return date.today() + timedelta(days = 1)
+		argError()
 	return dateFromArg(2)
 
+def getEndDate():
+	if len(sys.argv) < 4:
+		return date.today() + timedelta(days = 1)
+	return dateFromArg(3)
+
 def getClient():
-	return myfitnesspal.Client('undrinkable')
+	return myfitnesspal.Client(sys.argv[1])
 
 def printHeader():
-	print("date\tweight\tbodyfat\tnetcarbs\tfat\tprotein")		
+	print("date\tweight\tbodyfat\tcalories\tnetcarbs\tfat\tprotein")		
 
 def bodyMeasurementsStringForDate(date, weights, bodyfats):
 	weight = 0
