@@ -77,7 +77,7 @@ def invalidDateArgError(arg):
 	exit()
 
 def argError():
-	print("Invalid arguments given. Must supply start date (inclusive) as first argument and end date (exclusive) as second argument, with format mm/dd/yyyy")
+	print("Invalid arguments given. Must supply MFP username, start date (inclusive), and end date (exclusive). Dates should have format mm/dd/yyyy")
 	exit()
 	
 def daterange(start_date, end_date):
