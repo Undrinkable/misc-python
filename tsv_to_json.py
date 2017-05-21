@@ -3,7 +3,7 @@ import json
 
 def main():
 	if len(sys.argv) < 2:
-		print("Missing arguments.\nUsage: python tsv_to_json.py [infile]")
+		print("Missing arguments.\nUsage: python tsv_to_json.py [infile]\nTSV file must have a header row containing the column names. The first column will be used as key")
 		exit()
 
 	with open(sys.argv[1]) as infile:
